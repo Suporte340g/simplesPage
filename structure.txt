@@ -1,0 +1,12 @@
+main:
+- where we are;
+- words that inspire us;
+* some of our clients
+- what we offer;
+- text
+
+footer:
+- whtaz link;
+- contact us;
+- map;
+- copyrights;
