@@ -1,8 +1,10 @@
 main:
-- where we are;
-- words that inspire us;
-* some of our clients
-- what we offer;
+- (ok) where we are;
+- (ok) words that inspire us;
+- (ok)slider of companys;
+- (ok)prints of simples web
+- (ok)what we offer (buy me);
+- (ok)some of our clients
 - text
 
 footer:

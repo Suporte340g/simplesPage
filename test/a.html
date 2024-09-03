@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.slider-bar {
+  width: 150px;
+  background-color: #4CAF50;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  background-color: #ddd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #bbb;
+}
+
+.right-container {
+  flex-grow: 1;
+  padding: 20px;
+  display: none;
+}
+
+.box-container {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #c92828;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 100px;
+  font-weight: bold;
+}
+
+.active {
+  display: grid;
+}
+
+.show-container {
+  display: block;
+}
+  </style>
+</head>
+<body>
+  <div class="slider-bar">
+    <div class="item" data-set="set1">Item 1</div>
+    <div class="item" data-set="set2">Item 2</div>
+    <div class="item" data-set="set3">Item 3</div>
+    <div class="item" data-set="set4">Item 4</div>
+    <div class="item" data-set="set5">Item 5</div>
+  </div>
+  
+  <div class="right-container">
+    <div id="set1" class="box-container">
+      <div class="box">Box 1A</div>
+      <div class="box">Box 1B</div>
+      <div class="box">Box 1C</div>
+    </div>
+    <div id="set2" class="box-container">
+      <div class="box">Box 2A</div>
+      <div class="box">Box 2B</div>
+      <div class="box">Box 2C</div>
+    </div>
+    <div id="set3" class="box-container">
+      <div class="box">Box 3A</div>
+      <div class="box">Box 3B</div>
+      <div class="box">Box 3C</div>
+    </div>
+    <div id="set4" class="box-container">
+      <div class="box">Box 4A</div>
+      <div class="box">Box 4B</div>
+      <div class="box">Box 4C</div>
+    </div>
+    <div id="set5" class="box-container">
+      <div class="box">Box 5A</div>
+      <div class="box">Box 5B</div>
+      <div class="box">Box 5C</div>
+    </div>
+  </div>
+  <script>document.querySelectorAll('.item').forEach(item => {
+    item.addEventListener('click', function() {
+      // Hide all box containers
+      document.querySelectorAll('.box-container').forEach(container => {
+        container.classList.remove('active');
+      });
+  
+      // Show the right container and corresponding box set
+      const rightContainer = document.querySelector('.right-container');
+      rightContainer.classList.add('show-container');
+  
+      const targetSet = document.getElementById(this.getAttribute('data-set'));
+      targetSet.classList.add('active');
+    });
+  });</script>
+</body>
+</html>
