@@ -5,10 +5,10 @@ main:
 - (ok)prints of simples web
 - (ok)what we offer (buy me);
 - (ok)some of our clients
-- text
+- (ok)text
 
 footer:
 - whtaz link;
 - contact us;
-- map;
+* map;
 - copyrights;

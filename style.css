@@ -447,7 +447,7 @@ section.functionality {
 }
 
 .func-icon {
-
+  /*place something in here*/ 
 }
 
 .func-icon > img {
@@ -520,6 +520,7 @@ section.clients {
 
 section.about-us {
   background-color: rgb(39, 78, 78);
+  padding-bottom: 20em;
 }
 
 .about-us-title {
@@ -553,5 +554,143 @@ section.about-us {
 
 .about-us-text > p {
   font-size: 1.2em;
+  padding: 1em;
+}
+
+/* footer - whatzap*/
+
+footer {
+  background-color: #1d1c1c;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.what-container {
+  background-color: rgba(161, 199, 161, 0.137);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.what-link {
+  background-color: rgb(0, 18, 0);
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1400px;
+  max-width: 90%;
+  height: 200px;
+}
+
+.what-link-icon > img {
+  height: 180px;
+  padding-inline: 2em;
+  border-radius: 50%;
+}
+
+.what-link-main {
+  background-color: rgb(0, 71, 0);
+  flex-grow: 1;
+}
+
+.what-link-main > h3{
+  font-size: 2em;
+  padding: 0.5em;
+}
+
+.what-link-main > p {
+  padding-inline: 2em;
+  font-size: 1.2em;
+}
+
+.what-link-button {
+  background-color: rgb(0, 59, 0);
+  padding: 1em;
+  padding-right: 3em;
+}
+
+.what-link-button > a > button {
+  width: 300px;
+  height: 80px;
+  border-radius: 3em;
+  border: none;
+}
+
+/* contact us */
+
+.contactus {
+ width: 100%;
+ background-color: #000;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.contactus-title {
+  margin-top: 12em;
+  align-items: left;
+  background-color: #474444;
+  width: 1400px;
+  max-width: 90%;
+  display: flex;
+  align-items: center;
+}
+
+.contactus-title > h3 {
+  padding: 1.5em 0.5em;
+  font-size: 1.4em;
+}
+
+.contactus-title > img {
+  height: 35px;
+  width: 35px;
+}
+
+.contactus-container {
+  background-color: #474444;
+  display: flex;
+  justify-content: space-between;
+  width: 1400px;
+  max-width: 90%;
+}
+
+.contactus-block {
+  background-color: #746d6d;
+  height: 200px;
+  width: 200px;
+}
+
+.contactus-block > h4 {
+  padding-block: 1.2em;
+}
+
+.contactus-block > p {
+  padding-block: 0.3em;
+}
+
+/*copyright*/
+
+.copyright {
+  border-top: 1px solid white;
+  background-color: rgb(63, 36, 1);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.copyright > p {
+  color: red;
+  padding: 1em;
+}
+
+.copyright > button {
+  color: red;
   padding: 1em;
 }
