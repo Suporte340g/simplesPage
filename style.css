@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+button {
+  font-family: 'quickSand';
+}
+
 body {
   color: white;
   font-family: 'quickSand';
@@ -28,7 +32,12 @@ header {
 
 section.nav-bar {
   position: absolute;
-  background-color: rgb(20, 20, 30);
+  background: linear-gradient(135deg, rgba(30, 30, 150, 0.2), rgba(100, 100, 150, 0.1));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom: 0.5px solid rgba(200, 200, 255, 0.3);
+  box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.5);
+  /*background-color: rgb(20, 20, 30);*/
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -36,13 +45,17 @@ section.nav-bar {
 }
 
 div.nav-logo {
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 div.nav-logo > img {
-  height: 40px;
-  padding: 15px;
+  height: 50px;
+  padding: 6px 15px;
+  border-radius: 50%;
 }
 
 div.nav-logo > p {
@@ -50,32 +63,136 @@ div.nav-logo > p {
   margin-left: 10px;
 }
 
+div.nav-links {
+  flex-grow: 0.5;
+}
+
 div.nav-links > ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
 }
 
-div.nav-links > ul > li {
+div.nav-links > ul > a > li {
   font-size: 1.2em;
   list-style: none;
-  padding: 0px 10px;
+  padding: 10px 15px;
+  margin-inline: 0.5em;
+  border-radius: 0.6em;
+  transition: 0.5s;
 }
 
-div.nav-links > ul > li > a {
+div.nav-links > ul > a > li:hover {
+  background-color: rgba(5, 5, 70, 0.5);
+  border: 1px rgba(200, 200, 255, 0.5) solid;
+  font-size: 1.4em;
+  color: rgb(200, 200, 255);
+}
+
+div.nav-links > ul > a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+button.plans {
+  font-size: 1.6em;
+  border: none;
+  outline: none;
+  margin: 0px 40px;
+  padding: 8px 40px;
+  border-radius: 0.6em;
+  z-index: 0;
+  cursor: pointer;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  margin-right: 2%;
+}
+
+button.plans::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(40, 40, 80);
+  left: 0;
+  top: 0;
+  border-radius: 0.6em;
+}
+
+button.plans::before {
+  content: "";
+  background: linear-gradient(45deg, #0000ff, #0073ff, #0b1d77, #0000ff);
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  background-size: 300%;
+  z-index: -2;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  filter: blur(8px);
+  animation: glowing 10s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 200% 0;}
+  100% {background-position: 0 0;}
+}
+
+button.plans:hover::before {
+  opacity: 1;
+}
+
+button.plans:hover:after {
+  background: transparent;
+}
+
+button.plans:hover {
+  padding: 8px 80px;
+  font-weight: bold;
+  margin-right: 0;
+}
+
+button.plans > a > p:hover {
+  color: #61f4ff;
+}
+
+button.plans p {
+  color: whitesmoke;
+}
+
+button.plans a {
   text-decoration: none;
 }
 
-div.plans{
-  font-size: 1.4em;
-  background-color: rgb(30, 30, 60);
-  padding: 10px 50px;
-  margin: 0px 30px;
+div.staff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 2%;
+  margin-left: 8%;
+  border-radius: 20%;
+  margin-block: 0;
 }
 
-div.staff {
-  position: absolute;
-  right: 30px;
+div.staff img:hover {
+  background-color: #0e0e46;
+  border: 1px rgba(200, 200, 255, 0.5) solid;
+  width: 50px;
+}
+
+div.staff img {
+  color: transparent;
+  width: 40px;
+  padding: 0.1em;
+  margin: 0;
+  transition: 0.5s;
+  border-radius: 1em;
 }
 
 /*header-content*/
@@ -94,7 +211,6 @@ div.main-header-content {
   width: 62em;
   margin: auto;
   flex: 1;
-  /*background-color: darkblue;*/
 }
 
 div.main-header-content > h1 {
@@ -112,7 +228,7 @@ div.main-header-content > div {
 
 section.sub-plate {
   background-image: linear-gradient(
-    to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgb(30, 30, 40) 10%, rgb(30, 30, 40) 100%
+    to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgb(30, 30, 50) 10%, rgb(30, 30, 50) 100%
     );
   width: 100%; 
   height: 10em;
@@ -168,7 +284,7 @@ main {
 }
 
 section.info {
-  background-color: rgb(30, 30, 70);
+  background-image: linear-gradient(to bottom, rgb(30, 30, 50), rgb(20, 20, 30));
   height: 80vh;
   display: flex;
   justify-content: space-around;
@@ -176,7 +292,7 @@ section.info {
 }
 
 div.info-img > img {
-  height: 30em;
+  height: 40em;
   border-radius: 10px;
 }
 

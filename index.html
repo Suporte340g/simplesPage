@@ -14,21 +14,25 @@
 
     <section class="nav-bar">
       <div class="nav-logo">
-        <img src="assets/images/icon/Logo_Preta_2.png" alt="logo">
+        <img src="assets/images/icon/logo-colored.jpg" alt="logo">
         <p>simples sistemas</p>
       </div>
       <div class="nav-links">
         <ul>
-          <li><a href="#">Simples Web</a></li>
-          <li><a href="#">Feedback</a></li>
-          <li><a href="#">Help Desk</a></li>
-          <div class="plans">
-            <p>planos</p>
-          </div>
+          <a href="https://simplessi.inf.br:8080/Login/Entrar?AcessoNaoPermitido=True"><li>Simples Web</li></a>
+          <a href="#feedback"><li>Feedback</li></a>
+          <a href="#help-desk"><li>Help Desk</li></a>
+          <button class="plans">
+            <a href="https://simplessi.inf.br/views/home/planos.html">
+              <p>planos</p>
+            </a>
+          </button>
         </ul>
       </div>
       <div class="staff">
-        <p>area restrita</p>
+        <a href="https://simplessi.inf.br/Account/Login?ReturnUrl=%2FSuporte">
+          <img src="assets/images/icon/setting-icon-white.png" alt="">
+        </a>
       </div>
     </section>
 
@@ -85,7 +89,7 @@
     <!--comments-->
 
     <h2>Words that inspire us</h2>
-    <section class="slide">
+    <section class="slide" id="feedback">
       <div class="comments-box">
         <div class="comment">
           <img src="assets/images/profilePic/dogui.jpg" alt="dog on computer">
