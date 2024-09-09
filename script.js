@@ -44,7 +44,7 @@ prev.onclick = function (){
 
 //print selector
 
-let printContainer = document.getElementById('print-container')
+let printContainer = document.querySelector('.showoff-print')
 let print01 = document.getElementById('print01').onclick = function(){printContainer.style.backgroundImage = 'url(assets/images/prints/print01.jpg)'};
 let print02 = document.getElementById('print02').onclick = function(){printContainer.style.backgroundImage = 'url(assets/images/prints/print02.jpg)'};
 let print03 = document.getElementById('print03').onclick = function(){printContainer.style.backgroundImage = 'url(assets/images/prints/print03.jpg)'};

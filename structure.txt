@@ -1,14 +1,5 @@
-main:
-- (ok) where we are;
-- (ok) words that inspire us;
-- (ok)slider of companys;
-- (ok)prints of simples web
-- (ok)what we offer (buy me);
-- (ok)some of our clients
-- (ok)text
+- you can add add lowheight image with some text to separet a content (world azure);
 
-footer:
-- whtaz link;
-- contact us;
-* map;
-- copyrights;
+- info: animate bottom border of blocks;
+- info: make a text box overlap the image
+- info: place a title of the section above image using grid instead of flex;
