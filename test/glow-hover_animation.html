@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(30, 30, 35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  background-color: rgb(40, 40, 45);
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+  border-radius: 0.5em;
+  padding-block: 20em;
+  margin-block: 1em;
+  overflow: hidden;
+}
+
+.container .animate {
+  transition: 1s;
+  filter: blur(5px);
+  opacity: 0;
+}
+
+.cont-01 .animate {
+  transform: translateX(-100%);
+}
+
+.cont-02 .animate {
+  transform: translateX(100%);
+}
+
+.cont-03 .animate {
+  transform: scale(0.7);
+}
+
+.cont-04 .animate {
+  transform: translateX(-100%);
+  transition-delay: calc(.2s * var(--delay));
+}
+
+.show-animate .animate {
+  transform: translateX(0%);
+  transform: scale(1);
+  filter: blur(0px);
+  opacity: 1;
+}
+
+.card {
+  height: 400px;
+  width: 300px;
+  background-color: rgb(60, 60, 65);
+  border-radius: 0.5em;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s;
+  box-shadow: 0 0.5em 0.5em var(--clr-shadow);
+}
+
+.card:hover {
+  /*transform: translateY(-20px);*/
+  box-shadow: 0 0.5em 1em var(--clr-shadow);
+} 
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(var(--clr-glow), transparent, transparent);
+  height: 600px;
+  width: 600px;
+  opacity: 0;
+  transition: 0.5s, top 0s, left 0s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background-color: rgba(60, 60, 65, 0.8);
+  border-radius: 0.55em;
+}
+
+.card * {
+  color: #ddd;
+  position: relative;
+  z-index: 1;
+}
+
+#title {
+  font-size: 2em;
+  padding-top: 1em;
+}
+
+#desc {
+  font-size: 1.2em;
+  padding-top: 0.6em;
+}
+
+#price {
+
+}
+
+#disc {
+
+}
+
+#waring {
+
+}
+
+#list {
+
+}
+
+#button {
+
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container cont-01">
+    <div class="card animate" style="--clr-glow: #f00; --clr-shadow: rgba(255, 0, 0, 0.2)">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+    <div class="card animate" style="--clr-glow: #0f0; --clr-shadow: rgba(0, 255, 0, 0.2)">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+    <div class="card animate" style="--clr-glow: #00f; --clr-shadow: rgba(0, 0, 255, 0.2)">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+  </div>
+
+  <div class="container cont-02">
+    <div class="card animate" style="--clr-glow: #f00; --clr-shadow: rgba(255, 0, 0, 0.2)">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+    <div class="card animate" style="--clr-glow: #0f0; --clr-shadow: rgba(0, 255, 0, 0.2)">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+    <div class="card animate" style="--clr-glow: #00f; --clr-shadow: rgba(0, 0, 255, 0.2)">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+  </div>
+
+  <div class="container cont-03">
+    <div class="card animate" style="--clr-glow: #f00; --clr-shadow: rgba(255, 0, 0, 0.2)">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+    <div class="card animate" style="--clr-glow: #0f0; --clr-shadow: rgba(0, 255, 0, 0.2)">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+    <div class="card animate" style="--clr-glow: #00f; --clr-shadow: rgba(0, 0, 255, 0.2)">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+  </div>
+
+  <div class="container cont-04">
+    <div class="card animate" style="--clr-glow: #f00; --clr-shadow: rgba(255, 0, 0, 0.2); --delay: 0;">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+    <div class="card animate" style="--clr-glow: #0f0; --clr-shadow: rgba(0, 255, 0, 0.2); --delay: 1;">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+    <div class="card animate" style="--clr-glow: #00f; --clr-shadow: rgba(0, 0, 255, 0.2); --delay: 2;">
+      <!--<h3 id="title">title</h3>
+      <p id="desc">description</p>
+      <p id="price">price</p>
+      <p id="disc">discount</p>
+      <p id="warning">warning</p>
+      <ul id="list">
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+      </ul>
+      <button id="buttom">hello</button>-->
+    </div>
+  </div>
+
+  <script>
+    // glow on hover effect
+    let cards = document.querySelectorAll(".card")
+    cards.forEach(card => {
+      card.onmousemove = function(e) {
+        let x = e.pageX - card.offsetLeft;
+        let y = e.pageY - card.offsetTop;
+        card.style.setProperty('--x', x + 'px')
+        card.style.setProperty('--y', y + 'px')
+      }
+    })
+
+    // animation
+    /*let containers = document.querySelectorAll('.container')
+    window.onscroll = () => {
+      containers.forEach(container => {
+        let top = window.scrollY;
+        let offset = container.offsetTop -150;
+        let height = container.offsetHeight;
+        if (top >= offset && top < offset + height) {
+          container.classList.add('show-animate')
+        }
+      })
+    }*/
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show-animate');
+        } else {
+          entry.target.classList.remove('show-animate');
+        }
+      })
+    });
+
+    const hiddenElements = document.querySelectorAll('.container');
+    hiddenElements.forEach((el) => observer.observe(el));
+  </script>
+
+</body>
+</html>

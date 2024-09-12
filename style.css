@@ -648,6 +648,10 @@ div.comment > p.c {
 
 /* functionality */
 
+#functionality-title {
+  padding: 2em;
+}
+
 section.functionality {
   background-color: black;
   flex-direction: column;
@@ -670,18 +674,31 @@ section.functionality {
   background-color: rgb(110, 110, 110);
   height: 500px;
   width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5em;
 }
 
 .func-cards > .stars {
-  color: blue;
+  font-size: 3em;
+  letter-spacing: 3px;
+  color: yellow;
+  padding-top: 0.5em;
 }
 
 .func-cards > h3 {
-  color: green;
+  font-size: 2em;
+  padding: 1em;
 }
 
-.func-cards > p {
-  color: red;
+.funcs {
+  width: 90%;
+}
+
+.funcs > p {
+  font-size: 1.15em;
+  padding-block: 0.4em;
 }
 
 .func-icons-title {
@@ -723,16 +740,29 @@ section.functionality {
 }
 
 .func-icon-text > p{
-  font-size: 1.5em;
+  font-size: 1em;
   padding: 1em;
 }
+
 /* clients */
+
+@keyframes activity-selection {
+  from {
+    width: 3%;
+    color: white;
+  }
+  to {
+    width: 120%;
+    color: black;
+  }
+}
 
 section.clients {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  background-color: var(--clr-darker-01);
 }
 
 .clients-title > h2 {
@@ -742,48 +772,99 @@ section.clients {
 }
 
 .clients-container {
-  background-color: rgb(48, 13, 81);
-  width: 1200px;
+  width: 1250px;
   display: flex;
 }
 
 .clients-side-bar {
-  background-color: rgb(97, 43, 149);
+  background-color: var(--clr-darker-03);
   width: 25%;
   min-width: 200px;
   padding: 5em 0;
+  border-radius: 0.8em 0 0 0.8em;
+  box-shadow: 10px 0px 16px 0px rgba(0, 0, 10, 0.6);
+  z-index: 1;
 }
 
 .activity {
-  background-color: rgb(49, 8, 87);
+  background-color: var(--clr-darker-02);
   margin: 1em;
   padding: 1em;
+  padding-left: 1.5em;
+  position: relative;
+  border-radius: 0.3em;
+}
+
+.activity::before {
+  content: "";
+  background-color: rgb(60, 80, 120);
+  width: 3%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  border-radius: 0.3em 0 0 0.3em;
+}
+
+.activity:hover::before {
+  background-color: rgb(100, 120, 160);
+  width: 4%;
+}
+
+.activity > p {
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.cli-active::before {
+  content: "";
+  width: 3%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  animation: activity-selection 0.8s forwards;
+  border-radius: 0.3em;
+  background-color: rgb(100, 120, 160);
+}
+
+.cli-active > p {
+  color: black;
+  font-weight: 900;
 }
 
 .clients-group {
-  background-color: blueviolet;
+  background-color: var(--clr-darker-02);
   flex-grow: 1;
-  padding: 1em;
-
+  padding: 2em;
+  padding-left: 4em;
+  padding-right: 2em;
+  border-radius: 0 0.8em 0.8em 0;
 }
 
 .client-block-container {
-  background-color: rgb(150, 102, 195);
+  /*background-color: rgb(150, 102, 195);*/
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 1em;
+  transition: 1s;
 }
 
 .client-block {
-  background-color: rgb(3, 3, 84);
+  background-color: white;
+  border-radius: 1em;
+  border: 0.5em solid rgb(70, 80, 100);
+  border-bottom: 0em;
   height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  border-radius: 1em;
   overflow: hidden;
 }
 
@@ -795,7 +876,7 @@ section.clients {
 }
 
 .client-block-text {
-  background-color: #0000ff;
+  background-color: var(--clr-darker-03);
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -804,23 +885,19 @@ section.clients {
   justify-content: center;
 }
 
-.cli-active {
-  background-color: blueviolet;
-}
-
 /* about-us */
 
 section.about-us {
   background-color: rgb(39, 78, 78);
   padding-bottom: 20em;
+  margin-top: 3em;
 }
 
 .about-us-title {
   background-color: rgb(14, 129, 129);
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 3em;
+  align-items: center; 
 }
 
 .about-us-title > p {
@@ -852,8 +929,6 @@ section.about-us {
 /* footer - whatzap*/
 
 footer {
-  background-color: #1d1c1c;
-  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: right;
@@ -862,14 +937,13 @@ footer {
 }
 
 .what-container {
-  background-color: rgba(161, 199, 161, 0.137);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .what-link {
-  background-color: rgb(0, 18, 0);
+  background-image: linear-gradient(to right, rgb(0, 120, 80), rgb(0, 80, 80), rgb(0, 80, 120));
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -877,6 +951,7 @@ footer {
   width: 1400px;
   max-width: 90%;
   height: 200px;
+  border-radius: 1em;
 }
 
 .what-link-icon > img {
@@ -886,12 +961,12 @@ footer {
 }
 
 .what-link-main {
-  background-color: rgb(0, 71, 0);
+  /*background-color: rgb(0, 71, 0);*/
   flex-grow: 1;
 }
 
 .what-link-main > h3{
-  font-size: 2em;
+  font-size: 2.1em;
   padding: 0.5em;
 }
 
@@ -901,23 +976,27 @@ footer {
 }
 
 .what-link-button {
-  background-color: rgb(0, 59, 0);
+  /*background-color: rgb(0, 59, 0);*/
   padding: 1em;
   padding-right: 3em;
 }
 
 .what-link-button > a > button {
-  width: 300px;
-  height: 80px;
+  width: 350px;
+  height: 70px;
   border-radius: 3em;
   border: none;
+  font-size: 1.5em;
+  color: white;
+  border: 2px solid rgb(0, 140, 120);
+  background-color: rgb(0, 40, 60);
 }
 
 /* contact us */
 
 .contactus {
  width: 100%;
- background-color: #000;
+ background-image: linear-gradient(to bottom, rgb(30, 30, 60), rgb(0, 0, 10));
  display: flex;
  justify-content: center;
  align-items: center;
@@ -927,7 +1006,7 @@ footer {
 .contactus-title {
   margin-top: 12em;
   align-items: left;
-  background-color: #474444;
+  /*background-color: #474444;*/
   width: 1400px;
   max-width: 90%;
   display: flex;
@@ -940,26 +1019,28 @@ footer {
 }
 
 .contactus-title > img {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }
 
 .contactus-container {
-  background-color: #474444;
+  /*background-color: #474444;*/
   display: flex;
   justify-content: space-between;
   width: 1400px;
   max-width: 90%;
+  margin-bottom: 3em;
 }
 
 .contactus-block {
-  background-color: #746d6d;
+  /*background-color: #746d6d;*/
   height: 200px;
   width: 200px;
 }
 
 .contactus-block > h4 {
-  padding-block: 1.2em;
+  padding-block: 1.4em;
 }
 
 .contactus-block > p {
@@ -969,8 +1050,8 @@ footer {
 /*copyright*/
 
 .copyright {
-  border-top: 1px solid white;
-  background-color: rgb(63, 36, 1);
+  border-top: 1px solid var(--clr-darker-03);
+  background-color: rgb(0, 0, 8);
   width: 100%;
   display: flex;
   align-items: center;
@@ -978,11 +1059,14 @@ footer {
 }
 
 .copyright > p {
-  color: red;
-  padding: 1em;
+  color: white;
+  padding: 1.5em;
 }
 
 .copyright > button {
-  color: red;
+  color: rgb(0, 120, 160);
   padding: 1em;
+  border-radius: 4em;
+  border: 0.2em solid rgb(0, 120, 160);
+  background-color: transparent;
 }

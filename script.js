@@ -51,8 +51,10 @@ let print03 = document.getElementById('print03').onclick = function(){printConta
 let print04 = document.getElementById('print04').onclick = function(){printContainer.style.backgroundImage = 'url(assets/images/prints/print04.jpg)'};
 let print05 = document.getElementById('print05').onclick = function(){printContainer.style.backgroundImage = 'url(assets/images/prints/print05.png)'};
 
-// clients section
+// functionality - animation
 
+
+// clients section - client selection
 let clientSideBar = document.querySelectorAll(".clients-side-bar .activity");
 let clientBlock = document.querySelectorAll(".client-block-container");
 for (let i = 0; i < clientSideBar.length; i++) {
